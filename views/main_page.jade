@@ -1,0 +1,25 @@
+extends top_layout
+
+
+block js_afterload
+    script.
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+block sidebar
+    ul(class="sidebar-nav")
+        li(class="sidebar-brand")
+            a(href="/") Stop
+        li
+            a(href="#") Dashboard
+        li
+            button#butt_ressign.btn.btn-default.btn-lg Ressign
+
+block content
+    .container-fluid
+        .row
+            .col-lg-12
+                h1 Simple Sidebar
+                button(class="btn btn-default", id="menu-toggle") Toggle Menu
