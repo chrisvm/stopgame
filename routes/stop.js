@@ -7,7 +7,7 @@ router.get('/', function(request, response, next) {
 });
 
 router.get('/first_page', function(request, response, next) {
-    response.render('main_page', { head_title: 'Get Ready' });
+    response.render('first_page', { head_title: 'Get Ready' });
 });
 
 module.exports = router;
