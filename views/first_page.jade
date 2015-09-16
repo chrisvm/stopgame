@@ -16,15 +16,15 @@ html(lang='en')
       script(src="/static/js /respond.min.js")
 
    body
-      div.row
-         div.text-center
-            div.text-center#logo_container
-               img.img-circle#big_logo(src="/static/images/StopLogo_300x300.png")
-               div.form-group
-                  div.form-group
-                     label Username
-                     input.form-control#username
-                  div.form-group
-                     label Language
+      div.container
+         div.text-center.container#logo_container
+            img.img-circle#big_logo(src="/static/images/StopLogo_300x300.png")
+         div.text-center.container
+            div.input-group
+               label Username
+               input.form-control#usernamegit
+            div.input-group
+               label Language
+               select
 
-         //img.img-respons.img-circle#main_logo(src="/static/images/StopLogo_300x300.png")
+   //img.img-respons.img-circle#main_logo(src="/static/images/StopLogo_300x300.png")
