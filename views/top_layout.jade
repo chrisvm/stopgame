@@ -17,7 +17,11 @@ html(lang='en')
         block js_preload
 
     body
-        #wrapper
+        if toggled
+            #wrapper.toggled
+        else
+            #wrapper
+
             #sidebar-wrapper
                 block sidebar
 
