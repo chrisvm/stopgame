@@ -1,7 +1,7 @@
 Stop Game
 =========
 
-![GitHub Logo](/public/images/StopLogo_300x300.png)
+![GitHub Logo](public/images/StopLogo_300x300.png)
 
 ## Install 
 
