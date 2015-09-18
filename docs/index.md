@@ -1,8 +1,6 @@
 Stop Game
 =========
 
-![GitHub Logo](public/images/StopLogo_300x300.png)
-
 ## Install 
 
 To install, just run 
@@ -10,6 +8,17 @@ To install, just run
 	npm install
 
 in the root directory
+
+This program uses MkDocs for documentation. To install mkdocs, first make sure you have python3 and
+pip installed. Then run on the command line
+	
+	pip3 install mkdocs
+
+Then to serve the documentation, run 
+	
+	mkdocs serve 
+	
+in the root of the project
 
 ## Usage 
 
