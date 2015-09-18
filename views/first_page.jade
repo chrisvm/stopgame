@@ -16,15 +16,11 @@ html(lang='en')
       script(src="/static/js /respond.min.js")
 
    body
-      div.container
-         div.text-center.container#logo_container
-            img.img-circle#big_logo(src="/static/images/StopLogo_300x300.png")
-         div.text-center.container
-            div.input-group
-               label Username
-               input.form-control#usernamegit
-            div.input-group
-               label Language
-               select
+      div.container.center(width="600px")
+        div.input-group.center#logo_container
+            img.img-rounded#big_logo(src="/static/images/StopLogo_300x300.png")
+            div.input-group.input-group-lg
+                span.input-group-addon#addon #
+                input.form-control#username(aria-describedby="addon", placeholde="Username")
 
    //img.img-respons.img-circle#main_logo(src="/static/images/StopLogo_300x300.png")
