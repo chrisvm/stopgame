@@ -1,25 +1,9 @@
-doctype html
-html(lang='en')
-    head
-        meta(charset="utf-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport"             , content="width=device-width, initial-scale=1")
-        meta(name="description"          , content="")
-        meta(name="author"               , content="christian.velez5@upr.edu")
-        title= head_title
-        link( href="/static/css/bootstrap.css",     rel="stylesheet")
-        link( href="/static/css/simple-sidebar.css" rel="stylesheet")
-        link( href="/static/css/first_page.css"     rel="stylesheet")
-        script(src="/static/js /html5shiv.js")
-        script(src="/static/js /respond.min.js")
+div.container.center(width="600px")
+    div.input-group.center#logo_container
+        img.img-rounded#big_logo(src="/static/images/StopLogo_300x300.png")
 
-    body
-        div.container.center(width="600px")
-            div.input-group.center#logo_container
-                img.img-rounded#big_logo(src="/static/images/StopLogo_300x300.png")
+        div.input-group.input-group-lg.center
+            span.input-group-addon#addon
+                img.img-circle#green_dot(src="/static/images/green_dot.png")
 
-                div.input-group.input-group-lg.center
-                    span.input-group-addon#addon
-                        img.img-circle#green_dot(src="/static/images/green_dot.png")
-
-                    input.form-control#username(aria-describedby="addon", placeholde="Username")
+            input.form-control#username(aria-describedby="addon", placeholde="Username")

@@ -1,16 +1,17 @@
 var express = require('express');
+var jade = require('jade');
 
 var router = express.Router();
 
 router.get('/', function(request, response, next) {
-    response.render('main_page', {
+    var options = {
         head_title: 'Stop Main Page Mock-Up',
-        toggled: false
-    });
-});
+        toggled: false,
+        sidebar: jade.renderFile("views/sidebar.jade"),
+        content: jade.renderFile("views/first_page.jade")
+    };
 
-router.get('/first_page', function(request, response, next) {
-    response.render('first_page', { head_title: 'Get Ready' });
+    response.render('main_page', options);
 });
 
 module.exports = router;

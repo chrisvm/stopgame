@@ -14,7 +14,6 @@ html(lang='en')
         link(href="/static/css/first_page.css" rel="stylesheet")
         script(src="/static/js/html5shiv.js")
         script(src="/static/js/respond.min.js")
-        block js_preload
 
     body
         if toggled
@@ -22,12 +21,9 @@ html(lang='en')
         else
             #wrapper
 
-            #sidebar-wrapper
-                block sidebar
+            #sidebar-wrapper!= sidebar
 
-            #page-content-wrapper
-                block content
+            #page-content-wrapper!= content
 
         script(src="/static/js/jquery.min.js")
         script(src="/static/js/bootstrap.min.js")
-        block js_postload
