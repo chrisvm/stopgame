@@ -11,6 +11,10 @@ var stop = require('./routes/stop');
 // create app
 var app = express();
 
+// start socket io
+app.io = require('socket.io')(app);
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
