@@ -3,8 +3,7 @@
  */
 
 function checkUser(){
-    var input_text = document.getElementById('username');
-    input_text.disable =  true;
-
-    return false;
+    var input_text = document.getElementById('username').value;
+    var socket = io.connect('http://localhost');
+    alert("here");
 };
