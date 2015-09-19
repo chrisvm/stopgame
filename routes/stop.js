@@ -9,7 +9,7 @@ router.get('/', function(request, response, next) {
         toggled: true,
         sidebar_content: jade.renderFile("views/sidebar.jade"),
         content: jade.renderFile("views/first_page.jade")
-     };
+    };
 
     response.render('top_layout', options);
 });
