@@ -1,8 +1,14 @@
 .center{
     margin-left: auto;
     margin-right: auto;
+}
+
+.top_center{
+    margin-left: auto;
+    margin-right: auto;
     width: 300px;
 }
+
 
 body {
     background-color: #28342f;
@@ -10,10 +16,4 @@ body {
 
 p {
     color: #FFFFFF;
-}
-
-
-#go_btn {
-    margin-top: auto;
-    margin-bottom: auto;
 }
