@@ -7,6 +7,15 @@ body {
     background-color: #28342f;
 }
 
+p {
+    color: #FFFFFF;
+}
+
+#games_box{
+    display: none;
+}
+
+
 #go_btn {
     margin-top: auto;
     margin-bottom: auto;
