@@ -1,0 +1,28 @@
+extends top_layout
+
+
+block js_postload
+    script.
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+block sidebar
+    ul.sidebar-nav
+        li.sidebar-brand
+            img(src="/static/images/StopLogo_100x100.png")
+
+        li.sidebar-item
+            div
+                label Ready
+                    input(type="checkbox", style="margin-left: 20px")
+
+        li.sidebar-item
+            div Ressign
+
+block content
+    .container-fluid
+        .row
+            .col-lg-12
+                button.btn.btn-default#menu-toggle Toggle Menu
