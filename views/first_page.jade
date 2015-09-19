@@ -2,12 +2,12 @@ div.container-fluid(width="600px")
     div.input-group.center#logo_container
         img.img-rounded#big_logo(src="/static/images/StopLogo_300x300.png")
 
-        div.input-group-lgo#center_container
-            input.form-control#username(aria-describedby="addon", placeholde="Username")
+        div.input-group-lg#center_container
+            input.form-control#username( placeholder="Username")
         div
             button.btn.btn-primary.btn-block.btn-md#go_btn(onclick="fade_out()") Go
 
         script.
             var fade_out = function() {
                 $("#center_container").fadeOut("slow");
-            }
+            };
