@@ -21,9 +21,9 @@ The status code of a response message.
 
 | Property | Type | Description | 
 | -------- | ---- | ----------- |
-| code | int | the integer code |
-| short | string | the string with a more expressive code | 
-| error | string | if status is not `200|ALL_OK`, this property will have a error messsage. Otherwise empty | 
+| code | `int` | the integer code |
+| short | `string` | the string with a more expressive code | 
+| error | `string` | if status is not `200|ALL_OK`, this property will have a error messsage. Otherwise empty | 
 
 The property `StatusCode.short` won't differ from `StatusCode.code` in the response status, they only differ in
 the expressivenes of its use. Using the `short` is more expressive than `code`
@@ -42,9 +42,9 @@ Different Status
 
 | Code | Short | Description |
 | ---- | ----- | ----------- |
-| 200 | ALL_OK | The Message was correctly recieved and processed |
-| 400 | MISSING_OPTS | Options missing that are needed for the process of the message |
-| 500 | ENGINE_ERROR | Error in the execution of the message |
+| `200` | `ALL_OK` | The Message was correctly recieved and processed |
+| `400` | `MISSING_OPTS` | Options missing that are needed for the process of the message |
+| `500` | `ENGINE_ERROR` | Error in the execution of the message |
 
 ## Message Types 
 
@@ -61,9 +61,9 @@ ____
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| username | string | the username to auth |
+| username | `string` | the username to auth |
 
-#### Return Message 
+##### Return Message 
 
 `user auth_username_response`
 
@@ -71,8 +71,27 @@ ____
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| username | string | the username authed | 
-| status | StatusCode | the status of the response | 
+| username | `string` | the username authed | 
+| status | `StatusCode` | the status of the response | 
+
+____
+
+`user all_users`
+
+#### Opts 
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+
+##### Return Message 
+
+`user all_users_response`
+
+#### Opts 
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| users | `array(string)` | array with all the logged in users | 
 
 ____
 
