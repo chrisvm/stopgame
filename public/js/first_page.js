@@ -1,12 +1,12 @@
 /**
  * Created by benjamin on 09-19-15.
  */
+var socket = io.connect('http://localhost:3000');
+
 function checkUser(){
 
-    $("#username").className("readOnly");
-
-    socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('user auth_username', { username: $("#username").value });
-    });
+    $("#username").attr('disabled','disabled');
+    $("#go_btn").attr('disabled','disabled');
+    alert($("#username").val());
+    //socket.emit('user auth_username', "username" , $("#username").value);
 };
