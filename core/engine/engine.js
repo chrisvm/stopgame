@@ -1,3 +1,13 @@
-/**
- * Created by chrisvm on 9/19/15.
+/** engine.js
+ * Contains the engine top module
  */
+var init = require('./init');
+
+// set the engine modules
+var engine = {};
+engine.init = init;
+
+
+module.exports = engine;
+
+
