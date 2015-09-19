@@ -1,6 +1,8 @@
 Stop Game
 =========
 
+![GitHub Logo](http://localhost:3000/static/images/StopLogo_300x300.png)
+
 ## Install 
 
 To install, just run 
