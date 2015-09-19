@@ -4,7 +4,7 @@
 
 function checkUser(){
     var input_text = document.getElementById('username');
-    input_text.disable =  true
+    input_text.disable =  true;
 
     return false;
 };
