@@ -30,4 +30,9 @@ function checkUser(){
     // set the callback
     // TODO: set the callback
 
+    //call back
+    socket.on('auth_username_response', function(opts){
+        console.log(opts);
+    });
+
 }
