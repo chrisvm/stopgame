@@ -1,12 +1,14 @@
 /** engine.js
- * Contains the engine top module
+ * Contains the engine container module
  */
-var init = require('./init');
+var init = require('./engine_init');
 
 // set the engine modules
 var engine = {};
-engine.init = init;
 
+// init module
+engine.init = init;
+engine.init.engine = engine;
 
 module.exports = engine;
 
