@@ -12,6 +12,7 @@ var init = {};
  * @param socket.io.Server io instance of a socket io server to add the handlers
  */
 init.socketio = function (io) {
+    console.log("Initing socket.io handlers");
     io.on('connection', function (socket) {
         console.log('conection started');
     });
