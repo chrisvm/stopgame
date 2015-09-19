@@ -18,12 +18,12 @@ html(lang='en')
     body
         if toggled
             #wrapper.toggled
+                #sidebar-wrapper!= sidebar_content
+                #page-content-wrapper!= content
         else
             #wrapper
-
-            #sidebar-wrapper!= sidebar
-
-            #page-content-wrapper!= content
+                #sidebar-wrapper!= sidebar_content
+                #page-content-wrapper!= content
 
         script(src="/static/js/jquery.min.js")
         script(src="/static/js/bootstrap.min.js")
