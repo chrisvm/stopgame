@@ -23,4 +23,4 @@ Compromises node.js express app arquitecture, which relegates the messages to th
 the client. 
 
 
-![Connections](../docs/ModuleConnections.png)
+![Connections](http://localhost:3000/static/images/ModuleConnections.png)
