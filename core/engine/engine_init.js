@@ -4,7 +4,9 @@
  */
 
 // the init object
-var init = {};
+var init = {
+    "engine": null
+};
 
 /**
  * Attaches all the handlers to the socketio object
