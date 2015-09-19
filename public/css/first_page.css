@@ -2,3 +2,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+body {
+    background-color: #28342f;
+}
+
+#go_btn {
+    margin-top: auto;
+    margin-bottom: auto;
+}
