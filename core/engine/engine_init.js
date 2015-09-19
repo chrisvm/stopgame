@@ -17,7 +17,11 @@ init.socketio = function (io) {
     console.log("Initing socket.io handlers");
     io.on('connection', function (socket) {
         console.log('conection started');
+        socket.on('user auth_username', function(data){
+            console.log(data);
+        });
     });
+
 };
 
 

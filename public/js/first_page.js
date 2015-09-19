@@ -7,6 +7,6 @@ function checkUser(){
 
     $("#username").attr('disabled','disabled');
     $("#go_btn").attr('disabled','disabled');
-    alert($("#username").val());
-    //socket.emit('user auth_username', "username" , $("#username").value);
+    //alert($("#username").val());
+    socket.emit('user auth_username',  $("#username").val());
 };
