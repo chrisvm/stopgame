@@ -53,6 +53,8 @@ Here all the different types of messages, separated by domain
 
 ### Users 
 
+____
+
 `user auth_username` 
 
 #### Opts
@@ -71,3 +73,6 @@ Here all the different types of messages, separated by domain
 | -------- | ---- | ----------- |
 | username | string | the username authed | 
 | status | StatusCode | the status of the response | 
+
+____
+
