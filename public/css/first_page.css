@@ -1,6 +1,7 @@
 .center{
     margin-left: auto;
     margin-right: auto;
+    width: 300px;
 }
 
 body {
@@ -9,10 +10,6 @@ body {
 
 p {
     color: #FFFFFF;
-}
-
-#games_box {
-    display: none;
 }
 
 

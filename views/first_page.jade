@@ -1,16 +1,12 @@
-div.container-fluid(width="600px")
-    div.input-group.center#logo_container
-        img.img-rounded#big_logo(src="/static/images/StopLogo_300x300.png")
+div.center
+    div.container.center#logo_container
+        img.center.img-responsive#big_logo(src="/static/images/StopLogo_300x300.png")
+        form
+            div.form-group.form-group-lg#center_container
+                input.form-control#username( placeholder="Username")
+            button.btn.btn-primary.btn-block#go_btn(onclick="fade_out()") Go
 
-        div.input-group-lg#center_container
-            input.form-control#username( placeholder="Username")
-            button.btn.btn-primary.btn-block.btn-md#go_btn(onclick="fade_out()") Go
-
-        div#games_box
-            p online games
-
-        script.
-            var fade_out = function() {
-                $("#center_container").fadeOut("slow");
-                $("#games_box   ").fadeIn("slow");
-            };
+    script.
+        var fade_out = function() {
+            $("#center_container").fadeOut("slow");
+        };
