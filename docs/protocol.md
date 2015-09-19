@@ -23,7 +23,7 @@ The status code of a response message.
 | -------- | ---- | ----------- |
 | code | int | the integer code |
 | short | string | the string with a more expressive code | 
-| error | string | if status is not 200|ALL_OK, this property will have a error messsage. Otherwise empty | 
+| error | string | if status is not `200|ALL_OK`, this property will have a error messsage. Otherwise empty | 
 
 The property `StatusCode.short` won't differ from `StatusCode.code` in the response status, they only differ in
 the expressivenes of its use. Using the `short` is more expressive than `code`
