@@ -3,7 +3,6 @@
  */
 function checkUser(){
 
-    var socket = io.connect('http://localhost:3000');
     $("#username").className("readOnly");
 
     socket.on('news', function (data) {

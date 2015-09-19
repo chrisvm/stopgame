@@ -1,3 +1,3 @@
-/**
- * Created by chrisvm on 9/19/15.
- */
+// init the socket io connection
+var socket;
+socket = io.connect('http://localhost:3000');
