@@ -11,7 +11,7 @@ router.get('/', function(request, response, next) {
         content: jade.renderFile("views/first_page.jade")
     };
 
-    response.render('main_page', options);
+    response.render('top_layout', options);
 });
 
 module.exports = router;
