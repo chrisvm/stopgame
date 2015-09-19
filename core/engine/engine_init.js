@@ -1,4 +1,4 @@
-/** init.js
+/** egnine_init.js
  * This file exports the init object, which holds all the init methods for the
  * start of the app.
  */
