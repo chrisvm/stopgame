@@ -6,8 +6,8 @@ var router = express.Router();
 router.get('/', function(request, response, next) {
     var options = {
         head_title: 'Stop Main Page Mock-Up',
-        toggled: false,
-        sidebar: jade.renderFile("views/sidebar.jade"),
+        toggled: true,
+        sidebar_content: jade.renderFile("views/sidebar.jade"),
         content: jade.renderFile("views/first_page.jade")
     };
 
