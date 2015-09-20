@@ -1,0 +1,13 @@
+mixin add_session(room_name, players)
+    .list-group-item Games
+        .row
+            .col-lg-6
+                h1#sess-name= room_name
+            .col-lg-4
+                h1#players-count= players
+                span.glyphicon.glyphicon-user
+
+        button.btn.btn-success.btn-lg(id=room_name) Join
+
+each session in sessions
+    +add_session(session.name, session.size)
