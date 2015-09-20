@@ -1,17 +1,3 @@
-mixin add_session(room_name, players)
-    .list-group-item Games
-        .row
-            .col-lg-6
-                h1#sess-name= room_name
-            .col-lg-4
-                h1#players-count= players
-                span.glyphicon.glyphicon-user
-
-        button.btn.btn-success.btn-lg(id = room_name, onclick="return join_click();") Join
-
-- var header_top = ["current-room", "room-name", "something", "room-name", "something", "room-name", "something"]
-
-
 .page-header.center
     .container
         .well.content#page-box
@@ -24,5 +10,7 @@ mixin add_session(room_name, players)
 
                    .top-center.well#games-box
                        .list-group
-                           each val in header_top
-                               +add_session(val, "0/5")
+                           #games-list
+
+script(src="/static/js/games_page.js")
+!= scripts
