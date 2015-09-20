@@ -7,13 +7,12 @@ function checkUser(){
     var $username_textbox = $("#username");
     var $go_button = $("#go_btn");
 
-    // get username text
-    var username = $username_textbox.val();
-
     // disable the textbox and button
     $username_textbox.attr('disabled','disabled');
     $go_button.attr('disabled','disabled');
 
+    // get username text
+    var username = $username_textbox.val();
 
     // set the loading animation
     var spinner_opts = {
