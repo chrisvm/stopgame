@@ -11,7 +11,7 @@ follow `socket.send(message, opts)` where
 | opts | object | a javascript object with the data for the server to work on |
 
 
-All communication from server to client and reverse follow this message structure. 
+All communication from server to client and reverse follow this message structure.  
 
 ### Custom Types 
 
