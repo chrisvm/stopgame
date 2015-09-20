@@ -47,9 +47,26 @@ function checkUser() {
             // add username to socket
             socket.username = opts.username;
 
+            var username = {
+                "username" : opts.username
+            };
+
             // enter next page
             // TODO: set next page
             $("#logo_container").fadeOut("slow");
+            // set the loading animation
+            var spinner_opts = {
+                "position": "relative"
+            };
+            var spinner = new Spinner(spinner_opts).spin();
+            var $top_container = $('#top_container');
+            $top_container.append(spinner.el);
+
+            setTimeout(function () {
+                $top_container.css("margin-top", "100px");
+            }, 300);
+
+            send_username_post();
 
         } else if (opts.status.code == 300) {
             // if user already in server
@@ -98,4 +115,22 @@ function set_alert(type, tooltip_message) {
         $feedback.remove();
         $input_group.removeClass(addedClasses);
     }, 1500);
+}
+
+function send_username_post()
+{
+    $.ajax({
+        type: "POST",
+        url: "/",
+        async: false,
+        data: username,
+        success: success,
+        dataType: json,
+        error: function() {
+            return false;
+        },
+        success: function() {
+            //....
+        }
+    });
 }
