@@ -27,7 +27,7 @@ DataDB.prototype.set_models = function () {
     for (var index = 0; index < schemas_array.length; index++) {
         // create model
         var schema_def = schemas_array[index];
-        var schema = this.mongoose.Schema(schema_def.schema);
+        var schema = schema_def.schema;
         var model = this.mongoose.model(schema_def.name, schema);
 
         // add to this.models
