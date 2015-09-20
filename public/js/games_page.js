@@ -1,3 +1,4 @@
-/**
- * Created by benjamin on 09-20-15.
- */
+function join_click(){
+    alert(this.id);
+    return false;
+}
