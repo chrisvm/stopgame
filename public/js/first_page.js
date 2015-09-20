@@ -63,6 +63,7 @@ function checkUser() {
 
                 $.ajax({
                     "url": "/",
+                    "async": true,
                     "type": "post",
                     "data": {
                         "username": username
