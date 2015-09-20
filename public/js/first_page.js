@@ -1,8 +1,4 @@
-/**
- * Created by benjamin on 09-19-15.
- */
-
-function checkUser(){
+function checkUser() {
     // get user textbox and button
     var $username_textbox = $("#username");
     var $go_button = $("#go_btn");
