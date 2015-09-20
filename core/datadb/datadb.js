@@ -39,3 +39,4 @@ DataDB.prototype.set_models = function () {
     }
 };
 
+module.exports = DataDB;
