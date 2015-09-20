@@ -18,7 +18,7 @@ user.auth_username = function (socket, opts) {
             status.code = 200;
             status.short = 'ALL_OK';
             status.error = '';
-            
+
             // save the new user
             var new_user = new datadb.models.User({ "username": opts.username });
             new_user.save();
