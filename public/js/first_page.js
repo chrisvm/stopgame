@@ -19,6 +19,7 @@ function checkUser() {
             "placement": "bottom",
             "trigger": "manual"
         });
+
         $go_button.tooltip("show");
 
         // set icon feedback
@@ -37,12 +38,12 @@ function checkUser() {
         return;
     }
 
-    // set the loading animation
-    var spinner_opts = {
-        "position": "relative"
-    };
-    var spinner = new Spinner(spinner_opts).spin();
-    $('#loading_container').append(spinner.el);
+    //// set the loading animation
+    //var spinner_opts = {
+    //    "position": "relative"
+    //};
+    //var spinner = new Spinner(spinner_opts).spin();
+    //$('#loading_container').append(spinner.el);
 
     //// create the opts and send the 'user auth_username' message with callback
     ////
@@ -59,7 +60,14 @@ function checkUser() {
         // if already set username, return
         if (socket.username != null) return;
 
-        console.log(opts);
-        $("#logo_container").fadeOut("slow");
+        if (opts.status.code == 200)
+        {
+            socket.username = opts.username;
+            $("#logo_container").fadeOut("slow");
+        }
+        else(opts.status.code == 300)
+        {
+
+        }
     });
 }
