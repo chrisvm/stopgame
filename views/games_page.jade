@@ -22,7 +22,7 @@ mixin add_session(room_name, players)
                     .col-lg-8
                         h1#session Stop Sessions
 
-                   .top-center#games-box
+                   .top-center.well#games-box
                        .list-group
                            each val in header_top
                                +add_session(val, "0/5")
