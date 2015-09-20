@@ -10,27 +10,8 @@ function checkUser() {
 
     if (username == '') {
         // set warning to form-group
-        var addedClasses = "has-warning has-feedback";
-        var $input_group = $("#input_group");
-        $input_group.addClass(addedClasses);
-
-        $go_button.tooltip({
-            "title": "Empty Username",
-            "placement": "bottom",
-            "trigger": "manual"
-        });
-        $go_button.tooltip("show");
-
-        // set icon feedback
-        var $feedback = $('<span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>');
-        $input_group.append($feedback);
-
-        // set disappereance callback
+        set_alert('error', "Empty Username");
         setTimeout(function () {
-            $go_button.tooltip("hide");
-            $feedback.remove();
-            $input_group.removeClass(addedClasses);
-
             $username_textbox.attr("disabled", false);
             $go_button.attr("disabled", false);
         }, 1500);
@@ -62,4 +43,42 @@ function checkUser() {
         console.log(opts);
         $("#logo_container").fadeOut("slow");
     });
+}
+
+function set_alert(type, tooltip_message) {
+    var $username_textbox = $("#username");
+    var $go_button = $("#go_btn");
+    var $feedback, addedClasses;
+
+    if (type == 'alert') {
+        // set warning to form-group
+        addedClasses = "has-warning has-feedback";
+        $feedback = $('<span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>');
+    } else if (type == 'error') {
+        addedClasses = "has-error has-feedback";
+        $feedback = $('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+    } else {
+        return;
+    }
+
+    // add alert clases
+    var $input_group = $("#input_group");
+    $input_group.addClass(addedClasses);
+
+    $go_button.tooltip({
+        "title": tooltip_message,
+        "placement": "bottom",
+        "trigger": "manual"
+    });
+    $go_button.tooltip("show");
+
+    // set icon feedback
+    $input_group.append($feedback);
+
+    // set disappereance callback
+    setTimeout(function () {
+        $go_button.tooltip("hide");
+        $feedback.remove();
+        $input_group.removeClass(addedClasses);
+    }, 1500);
 }
