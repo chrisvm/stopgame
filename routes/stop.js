@@ -28,7 +28,7 @@ router.post('/', function (request, response) {
     var username = request.body.username;
 
     // render game_page
-    var games_page = jade.renderFile("views/second_page.jade");
-    response.html(games_page);
+    response.render("games_page");
 });
+
 module.exports = router;
