@@ -96,3 +96,26 @@ ____
 
 ____
 
+### Room
+
+____
+
+`room all_rooms` 
+
+#### Opts
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| username | `string` | the username sending the message |
+
+##### Return Message 
+
+`room all_rooms_response`
+
+#### Opts 
+
+| Property | Type | Description |
+| -------- | ---- | ----------- | 
+| status | `StatusCode` | the status of the response | 
+| rooms | `[Room]` | the array with all the current rooms | 
+
