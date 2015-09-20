@@ -47,6 +47,17 @@ Different Status
 | `400` | `MISSING_OPTS` | Options missing that are needed for the process of the message |
 | `500` | `ENGINE_ERROR` | Error in the execution of the message |
 
+____
+
+#### RoomRef 
+
+Holds a reference to a room in the db 
+
+| Property | Type | Description | 
+| -------- | ---- | ----------- |
+| name | `string` | the name of the room |
+| id | `string` | the id of the room in the db | 
+
 ## Message Types 
 
 Here all the different types of messages, separated by domain 
@@ -119,3 +130,24 @@ ____
 | status | `StatusCode` | the status of the response | 
 | rooms | `[Room]` | the array with all the current rooms | 
 
+____
+
+`room create_room`
+
+#### Opts
+
+| Property | Type | Description |
+| -------- | ---- | ----------- | 
+| room_name | `string` | the new room name | 
+| username | `string` | the username creating the room |
+
+##### Return Message 
+
+`room create_room_response`
+
+#### Opts 
+
+| Property | Type | Description |
+| -------- | ---- | ----------- | 
+| status | `StatusCode` | the status of the response |
+| room | `RoomRef` | the room reference | 
