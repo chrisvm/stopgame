@@ -13,14 +13,10 @@ function DataDB() {
     // connect to the server
     mongoose.connect(MONGODB_SERVER);
 
-    // set event handlers
-    var _this = this;
+    // set event handlers and connect
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function (callback){
-        // set models
-        _this.set_models();
-    });
+    this.set_models();
 }
 
 DataDB.prototype.set_models = function () {
@@ -28,7 +24,7 @@ DataDB.prototype.set_models = function () {
     var schemas_array = require('./models_schema');
 
     // for each one, create a model and add it to this.models
-    for (var index = 0; x < schemas_array.length(); index++) {
+    for (var index = 0; index < schemas_array.length; index++) {
         // create model
         var schema_def = schemas_array[index];
         var schema = this.mongoose.Schema(schema_def.schema);
