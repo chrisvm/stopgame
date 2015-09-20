@@ -52,7 +52,6 @@ function checkUser() {
             };
 
             // enter next page
-            // TODO: set next page
             $("#logo_container").fadeOut("slow");
             // set the loading animation
             var spinner_opts = {
@@ -66,7 +65,22 @@ function checkUser() {
                 $top_container.css("margin-top", "100px");
             }, 300);
 
-            send_username_post();
+            $.ajax({
+                type: "POST",
+                url: "/",
+                data: username,
+                dataType: "html",
+                error: function() {
+                    console.log("error on moving into games page")
+                },
+                success: function(data, status, jqXHR) {
+                    // fadeout the spinner
+                    spinner.stop();
+
+                    // set new html in content
+                    $("#page-content-wrapper").html(data);
+                }
+            });
 
         } else if (opts.status.code == 300) {
             // if user already in server
@@ -117,20 +131,3 @@ function set_alert(type, tooltip_message) {
     }, 1500);
 }
 
-function send_username_post()
-{
-    $.ajax({
-        type: "POST",
-        url: "/",
-        async: false,
-        data: username,
-        success: success,
-        dataType: json,
-        error: function() {
-            return false;
-        },
-        success: function() {
-            //....
-        }
-    });
-}
