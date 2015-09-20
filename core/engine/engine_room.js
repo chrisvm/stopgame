@@ -1,5 +1,5 @@
 var DataDB = require('../datadb/datadb');
-var utils = require('./uitls');
+var utils = require('./utils');
 
 var room = {
     "engine": null,
