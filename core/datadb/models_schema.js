@@ -23,6 +23,12 @@ var RoomSchema = {
         "state": RoomState
     })
 };
+RoomSchema.schema.methods.getRef = function () {
+    return {
+        "name": this.name,
+        "id": this._id
+    };
+};
 
 module.exports = [
     UserSchema,
