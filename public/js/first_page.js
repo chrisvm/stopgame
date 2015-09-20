@@ -28,10 +28,10 @@ function checkUser() {
     socket.emit('user auth_username', opts);
 
     // set the callback
-    // TODO: set the callback
+    socket.on('user auth_username_response', function (opts) {
+        // if already set username, return
+        if (socket.username != null) return;
 
-    //call back
-    socket.on('auth_username_response', function(opts){
         console.log(opts);
         $("#logo_container").fadeOut("slow");
     });
