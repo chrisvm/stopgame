@@ -15,7 +15,7 @@ router.get('/', function(request, response, next) {
 });
 
 router.post('/', function (request, response) {
-    console.log("Got POST Request");
+    // if not given username
     if (!'username' in request.body) {
         var locals = {
             "message": "Error on sent POST body",
