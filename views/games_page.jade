@@ -7,7 +7,7 @@ mixin add_session(room_name, players)
                 h1#players-count= players
                 span.glyphicon.glyphicon-user
 
-        button.btn.btn-success.btn-lg Join
+        button.btn.btn-success.btn-lg(id = room_name, onclick="return join_click();") Join
 
 - var header_top = ["current-room", "room-name", "something", "room-name", "something", "room-name", "something"]
 
