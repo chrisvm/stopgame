@@ -9,7 +9,7 @@ var UserSchema = {
 
 var RoomStateSchema = {
     "name": "RoomState",
-    "schema": new Schema({
+    "schema": new mongoose.Schema({
 
     })
 };
