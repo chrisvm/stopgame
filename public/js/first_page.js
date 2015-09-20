@@ -11,6 +11,8 @@ function checkUser() {
     if (username == '') {
         // set warning to form-group
         set_alert('error', "Empty Username");
+
+        // disable disable
         setTimeout(function () {
             $username_textbox.attr("disabled", false);
             $go_button.attr("disabled", false);
@@ -18,12 +20,12 @@ function checkUser() {
         return;
     }
 
-    // set the loading animation
-    var spinner_opts = {
-        "position": "relative"
-    };
-    var spinner = new Spinner(spinner_opts).spin();
-    $('#loading_container').append(spinner.el);
+    //// set the loading animation
+    //var spinner_opts = {
+    //    "position": "relative"
+    //};
+    //var spinner = new Spinner(spinner_opts).spin();
+    //$('#loading_container').append(spinner.el);
 
     //// create the opts and send the 'user auth_username' message with callback
     ////
@@ -40,8 +42,19 @@ function checkUser() {
         // if already set username, return
         if (socket.username != null) return;
 
-        console.log(opts);
-        $("#logo_container").fadeOut("slow");
+        if (opts.status.code == 200) {
+            // if user not found
+            // add username to socket
+            socket.username = opts.username;
+
+            // enter next page
+            // TODO: set next page
+            $("#logo_container").fadeOut("slow");
+
+        } else if (opts.status.code == 300) {
+            // if user already in server
+            set_alert("error", "Username taken");
+        }
     });
 }
 
