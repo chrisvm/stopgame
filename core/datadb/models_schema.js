@@ -20,12 +20,14 @@ var RoomSchema = {
         "name": String,
         "users": [UserSchema.schema],
         "ready": [UserSchema.schema],
-        "state": [RoomStateSchema.schema]
+        "state": [RoomStateSchema.schema],
+        "num_players": Number
     })
 };
 RoomSchema.schema.methods.getRef = function () {
     return {
         "name": this.name,
+        "size": this.num_players,
         "id": this._id
     };
 };
