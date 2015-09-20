@@ -47,38 +47,34 @@ function checkUser() {
             // add username to socket
             socket.username = opts.username;
 
-            var username = {
-                "username" : opts.username
-            };
-
             // enter next page
-            $("#logo_container").fadeOut("slow");
-            // set the loading animation
-            var spinner_opts = {
-                "position": "relative"
-            };
-            var spinner = new Spinner(spinner_opts).spin();
-            var $top_container = $('#top_container');
-            $top_container.append(spinner.el);
-
-            setTimeout(function () {
+            $("#logo_container").fadeOut("slow", function () {
+                // set the loading animation
+                var spinner_opts = {
+                    "position": "relative"
+                };
+                var spinner = new Spinner(spinner_opts).spin();
+                var $top_container = $('#top_container');
                 $top_container.css("margin-top", "100px");
-            }, 300);
+                $top_container.append(spinner.el);
+                $top_container.fadeIn(800);
 
-            $.ajax({
-                type: "POST",
-                url: "http://localhost",
-                data: username,
-                dataType: "html",
-                error: function() {
-                    console.log("error on moving into games page")
-                },
-                success: function(data, status, jqXHR) {
-                    // fadeout the spinner
-                    spinner.stop();
-                    // set new html in content
-                    $("#page-content-wrapper").html(data);
-                }
+                var $content = $("#page-content-wrapper");
+
+                $.ajax({
+                    "url": "/",
+                    "type": "post",
+                    "data": {
+                        "username": username
+                    },
+                    "success": function (data, textStatus, jqXHR) {
+                        $content.html(data);
+                    },
+                    "error": function (jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus);
+                        $content.html(textStatus);
+                    }
+                });
             });
 
         } else if (opts.status.code == 300) {
