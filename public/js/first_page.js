@@ -54,6 +54,10 @@ function checkUser() {
         } else if (opts.status.code == 300) {
             // if user already in server
             set_alert("error", "Username taken");
+            setTimeout(function () {
+                $username_textbox.attr("disabled", false);
+                $go_button.attr("disabled", false);
+            }, 1500);
         }
     });
 }
