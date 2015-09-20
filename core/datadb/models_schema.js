@@ -10,7 +10,7 @@ var UserSchema = {
 var RoomStateSchema = {
     "name": "RoomState",
     "schema": new mongoose.Schema({
-
+        "current_letter": String
     })
 };
 
@@ -20,7 +20,7 @@ var RoomSchema = {
         "name": String,
         "users": [UserSchema.schema],
         "ready": [UserSchema.schema],
-        "state": RoomState
+        "state": [RoomStateSchema.schema]
     })
 };
 RoomSchema.schema.methods.getRef = function () {
