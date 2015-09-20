@@ -35,7 +35,7 @@ function checkUser(){
     // TODO: set the callback
 
     //call back
-    socket.on('auth_username_response', function(opts){
+    socket.on('user auth_username_response', function(opts){
         console.log(opts);
         $("#logo_container").fadeOut("slow");
     });
