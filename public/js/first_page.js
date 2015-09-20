@@ -67,7 +67,7 @@ function checkUser() {
 
             $.ajax({
                 type: "POST",
-                url: "/",
+                url: "http://localhost",
                 data: username,
                 dataType: "html",
                 error: function() {
@@ -76,7 +76,6 @@ function checkUser() {
                 success: function(data, status, jqXHR) {
                     // fadeout the spinner
                     spinner.stop();
-
                     // set new html in content
                     $("#page-content-wrapper").html(data);
                 }
@@ -94,7 +93,6 @@ function checkUser() {
 }
 
 function set_alert(type, tooltip_message) {
-    var $username_textbox = $("#username");
     var $go_button = $("#go_btn");
     var $feedback, addedClasses;
 
