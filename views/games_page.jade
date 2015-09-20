@@ -26,3 +26,9 @@ mixin add_session(room_name, players)
                        .list-group
                            each val in header_top
                                +add_session(val, "0/5")
+
+           .well
+                form
+                    .form-group
+                        input.form-control.input-md#new_room
+                     button.btn.btn-primary.btn-block Create Room
