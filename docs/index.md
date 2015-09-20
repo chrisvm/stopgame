@@ -39,3 +39,4 @@ This will start the webapp in localhost:3000 if no PORT variable is set.
 - [Freebase](https://www.freebase.com/)
 - [bootstrap](http://getbootstrap.com/)
 - [jade](http://jade-lang.com/)
+- [mongoose](http://mongoosejs.com/)
