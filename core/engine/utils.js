@@ -14,7 +14,7 @@ function StatusCode(opts) {
             return {
                 "code": 400,
                 "short": "MISSING_OPTS",
-                "error: opts.error
+                "error": opts.error
             };
             break;
 
