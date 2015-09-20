@@ -7,37 +7,48 @@ function checkUser(){
     var $username_textbox = $("#username");
     var $go_button = $("#go_btn");
 
-    // disable the textbox and button
-    $username_textbox.attr('disabled','disabled');
-    $go_button.attr('disabled','disabled');
-
     // get username text
     var username = $username_textbox.val();
 
-    // set the loading animation
-    var spinner_opts = {
-        "position": "relative"
-    };
-    var spinner = new Spinner(spinner_opts).spin();
-    $('#loading_container').append(spinner.el);
+    if (username == '')
+    {
+        var $input_group = $("#input_group");
+        $input_group.attr("class", "form-group has-warning");
+        return;
+    }
+    else
+    {
+        // disable the textbox and button
+        $username_textbox.attr('disabled','disabled');
+        $go_button.attr('disabled','disabled');
 
-    //// create the opts and send the 'user auth_username' message with callback
-    ////
-    // create the opts
-    var opts = {
-        "username": username
-    };
 
-    // send the user.auth_username message
-    socket.emit('user auth_username', opts);
 
-    // set the callback
-    // TODO: set the callback
+        // set the loading animation
+        var spinner_opts = {
+            "position": "relative"
+        };
+        var spinner = new Spinner(spinner_opts).spin();
+        $('#loading_container').append(spinner.el);
 
-    //call back
-    socket.on('user auth_username_response', function(opts){
-        console.log(opts);
-        $("#logo_container").fadeOut("slow");
-    });
+        //// create the opts and send the 'user auth_username' message with callback
+        ////
+        // create the opts
+        var opts = {
+            "username": username
+        };
+
+        // send the user.auth_username message
+        socket.emit('user auth_username', opts);
+
+        // set the callback
+        // TODO: set the callback
+
+        //call back
+        socket.on('user auth_username_response', function(opts){
+            console.log(opts);
+            $("#logo_container").fadeOut("slow");
+        });
+    }
 
 }
