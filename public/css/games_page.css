@@ -16,6 +16,7 @@
     margin-right: auto;
     margin-left: auto;
     width: 800px;
+    background-color: rgba(333, 333, 333, .75);
 }
 
 body {
