@@ -43,6 +43,7 @@ Different Status
 | Code | Short | Description |
 | ---- | ----- | ----------- |
 | `200` | `ALL_OK` | The Message was correctly recieved and processed |
+| `300` | `NOT_OK` | The Message was correctly recieved and processed, but response is false |
 | `400` | `MISSING_OPTS` | Options missing that are needed for the process of the message |
 | `500` | `ENGINE_ERROR` | Error in the execution of the message |
 
