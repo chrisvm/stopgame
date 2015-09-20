@@ -5,12 +5,35 @@ function checkUser() {
 
     // get username text
     var username = $username_textbox.val();
+    $username_textbox.attr("disabled", true);
+    $go_button.attr("disabled", true);
 
     if (username == '') {
         // set warning to form-group
+        var addedClasses = "has-warning has-feedback";
         var $input_group = $("#input_group");
-        $input_group.attr("class", "form-group has-warning");
+        $input_group.addClass(addedClasses);
 
+        $go_button.tooltip({
+            "title": "Empty Username",
+            "placement": "bottom",
+            "trigger": "manual"
+        });
+        $go_button.tooltip("show");
+
+        // set icon feedback
+        var $feedback = $('<span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>');
+        $input_group.append($feedback);
+
+        // set disappereance callback
+        setTimeout(function () {
+            $go_button.tooltip("hide");
+            $feedback.remove();
+            $input_group.removeClass(addedClasses);
+
+            $username_textbox.attr("disabled", false);
+            $go_button.attr("disabled", false);
+        }, 1500);
         return;
     }
 
