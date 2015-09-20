@@ -21,7 +21,7 @@ init.socketio = function (io) {
 
         // set the socket methods
         socket.on('user auth_username', function(data){
-            engine.user.auth_username(socket, data);
+            init.engine.user.auth_username(socket, data);
         });
     });
 
