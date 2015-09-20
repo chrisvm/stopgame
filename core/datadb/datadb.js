@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 // db constants
-MONGODB_SERVER = 'mongodb://localhost:27017';
+MONGODB_SERVER = 'mongodb://52.88.157.123/stop';
 
 function DataDB() {
     // set mongoose reference
