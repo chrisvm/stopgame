@@ -1,0 +1,20 @@
+{
+  "routes": {
+
+    "user auth_username": [
+      "user",
+      "auth_username"
+    ],
+
+    "room all_rooms": [
+      "room",
+      "all_rooms"
+    ],
+
+    "room create_room": [
+      "room",
+      "create_rooms"
+    ]
+
+  }
+}
