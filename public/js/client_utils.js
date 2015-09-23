@@ -2,7 +2,7 @@
 ////type: "error", "alert"
 ////tootltip Message: Message to show
 ////alert_data : var data = {'btn' : btn.id, 'inp': input.id};
-function set_alert(type, tooltip_message, alert_data) {
+function set_alert(type, message, alert_data) {
     var $go_button = $('#'+alert_data.btn);
     var $input = $('#'+alert_data.inp);
     var $feedback, addedClasses;
@@ -23,7 +23,7 @@ function set_alert(type, tooltip_message, alert_data) {
     $input_group.addClass(addedClasses);
 
     $go_button.tooltip({
-        "title": tooltip_message,
+        "title": message,
         "placement": "bottom",
         "trigger": "manual"
     });
@@ -34,7 +34,7 @@ function set_alert(type, tooltip_message, alert_data) {
 
     // set disappereance callback
     setTimeout(function () {
-        $go_button.tooltip("hide");
+        $go_button.tooltip("destroy");
         $feedback.remove();
         $input_group.removeClass(addedClasses);
         $input.attr("disabled", false);
