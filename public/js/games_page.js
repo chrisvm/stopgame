@@ -10,3 +10,7 @@ socket.on("room all_users_response", function (opts) {
 socket.emit("room all_users", {
     "username": socket.username
 });
+
+$("#add-room").click(function(){
+    var input = $("#room-name").val();
+});
