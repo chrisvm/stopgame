@@ -65,8 +65,6 @@ socket.on('user auth_username_response', function (opts) {
             $top_container.append(spinner.el);
             $top_container.fadeIn(800);
 
-            var $content = $("#page-content-wrapper");
-
             $.ajax({
                 "url": "/",
                 "async": true,
@@ -75,11 +73,11 @@ socket.on('user auth_username_response', function (opts) {
                     "username": username
                 },
                 "success": function (data, textStatus, jqXHR) {
-                    $content.html(data);
+                    $("#page-content-wrapper").html(data);
                 },
                 "error": function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus);
-                    $content.html(textStatus);
+                    $("#page-content-wrapper").html(textStatus);
                 }
             });
         });
