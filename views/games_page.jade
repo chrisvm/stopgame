@@ -1,0 +1,22 @@
+.page-header.center
+    .container
+        .well.content#page-box
+            .panel-body
+                .row
+                    .col-lg-2
+                        img.img-responsive#small_logo(src="/static/images/StopLogo_100x100.png")
+                    .col-lg-8
+                        h1#session Stop Sessions
+
+                   .top-center.well#games-box
+                       .list-group
+                           #games-list
+            .well
+                form
+                    .form-group
+                        input.form-control.input-md#new_room
+                    button.btn.btn-primary.btn-block Create Room
+
+script(src="/static/js/games_page.js")
+!= scripts
+

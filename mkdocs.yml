@@ -1,0 +1,9 @@
+site_name: Stop Game
+repo_url: https://github.com/chrisvm/stopgame
+docs_dir: docs
+site_dir: docs/html
+theme: readthedocs
+pages:
+  - Home: index.md
+  - Protocol: protocol.md
+  - Roadmap: roadmap.md

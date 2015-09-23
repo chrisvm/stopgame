@@ -1,38 +1,35 @@
-/**
- * Module dependencies.
- */
+// Module dependencies.
 
 var app = require('../app');
 var debug = require('debug')('parsing_test:server');
 var http = require('http');
+var iolib = require('socket.io');
+var engine = require('../core/engine/engine');
 
-/**
- * Get port from environment and store in Express.
- */
-
+// Get port from environment and store in Express
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 var host = '0.0.0.0';
 
-/**
- * Create HTTP server.
- */
-
+// create the http server
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+// create the socket.io instance
+console.log("Connection socket.io...");
+var io = iolib(server);
+engine.init.socketio(io);
+app.io = io;
 
+// Listen on provided port, on all network interfaces.
 console.log("Starting listen on " + host + ":" + port);
+
+// set handlers
 server.on('error', onError);
 server.on('listening', onListening);
 server.listen(port, host);
 
-/**
- * Normalize a port into a number, string, or false.
- */
 
+// Normalize a port into a number, string, or false.
 function normalizePort(val) {
     var port = parseInt(val, 10);
 
@@ -49,10 +46,7 @@ function normalizePort(val) {
     return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
+// Event listener for HTTP server "error" event.
 function onError(error) {
     if (error.syscall !== 'listen') {
         throw error;
@@ -77,9 +71,7 @@ function onError(error) {
     }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
+// Event listener for HTTP server "listening" event.
 function onListening() {
     var addr = server.address();
     var bind = (typeof(addr) === 'string')
