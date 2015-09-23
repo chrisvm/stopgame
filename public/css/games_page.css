@@ -19,6 +19,14 @@
     background-color: rgba(333, 333, 333, .75);
 }
 
+#add_room_box{
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    background-color: rgba(333, 333, 333, .75);
+}
+
+
 body {
     background-color: rgba(111, 111, 111, .75);
 }
