@@ -13,7 +13,7 @@ function checkUser() {
 
     if (username == '') {
         // set warning to form-group
-        set_alert('error', "Empty Username", alertData);
+        set_alert('alert', "Empty Username", alertData);
 
         // disable disable
         setTimeout(function () {
@@ -82,7 +82,7 @@ function checkUser() {
 
         } else if (opts.status.code == 300) {
             // if user already in server
-            set_alert("alert", "Username taken", alertData);
+            set_alert("error", "Username taken", alertData);
             setTimeout(function () {
                 $username_textbox.attr("disabled", false);
                 $go_button.attr("disabled", false);
