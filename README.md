@@ -29,3 +29,8 @@ This will start the webapp in localhost:3000 if no PORT variable is set.
 - [bootstrap](http://getbootstrap.com/)
 - [jade](http://jade-lang.com/)
 - [mongoose](http://mongoosejs.com/)
+
+### v0.2
+
+- Starting Room creation and display
+- user creation (roughtly) works 
