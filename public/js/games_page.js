@@ -8,5 +8,5 @@ socket.on("room all_users_response", function (opts) {
 });
 
 socket.emit("room all_users", {
-    "username": socket.username,
+    "username": socket.username
 });
