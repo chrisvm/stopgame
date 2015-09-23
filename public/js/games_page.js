@@ -18,12 +18,16 @@ function room_name_validate(name) {
 }
 
 // set the create method
-$("#add_room").click(function () {
-    var room_name = $("#room_name").val();
+$("#add-room").click(function () {
+    var room_name = $("#room-name").val();
+
+    var alertInput = {'btn': $("#add-room").attr('id'),
+                      'inp': $('#room-name').attr('id')};
     if (!room_name_validate(room_name)) {
         // alert code here
+        set_alert("alert", "No Name Entered", alertInput);
         // todo: finish the alert code
-        return;
+        return false;
     }
 
     var opts = {

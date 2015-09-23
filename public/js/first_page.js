@@ -82,7 +82,7 @@ function checkUser() {
 
         } else if (opts.status.code == 300) {
             // if user already in server
-            set_alert("error", "Username taken", alertData);
+            set_alert("alert", "Username taken", alertData);
             setTimeout(function () {
                 $username_textbox.attr("disabled", false);
                 $go_button.attr("disabled", false);

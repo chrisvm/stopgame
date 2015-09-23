@@ -1,6 +1,10 @@
+
+////type: "error", "alert"
+////tootltip Message: Message to show
+////alert_data : var data = {'btn' : btn.id, 'inp': input.id};
 function set_alert(type, tooltip_message, alert_data) {
-    var $go_button = $(alert_data.btn);
-    var $input = $(alert_data.inp);
+    var $go_button = $('#'+alert_data.btn);
+    var $input = $('#'+alert_data.inp);
     var $feedback, addedClasses;
 
     if (type == 'alert') {
