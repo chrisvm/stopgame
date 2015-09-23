@@ -26,7 +26,6 @@ $("#add-room").click(function () {
     if (!room_name_validate(room_name)) {
         // alert code here
         set_alert("alert", "No Name Entered", alertInput);
-        // todo: finish the alert code
         return false;
     }
 
