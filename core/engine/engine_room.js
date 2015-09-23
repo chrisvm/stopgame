@@ -26,3 +26,7 @@ room.all_rooms = function (socket, opts) {
     });
 };
 
+room.create_room = function (socket, opts) {
+
+};
+
