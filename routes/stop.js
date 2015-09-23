@@ -1,5 +1,6 @@
 var express = require('express');
 var jade = require('jade');
+var templates = require('../public/js/templates');
 
 var router = express.Router();
 
@@ -8,7 +9,8 @@ router.get('/', function(request, response, next) {
         head_title: 'Stop Main Page',
         toggled: true,
         sidebar_content: jade.renderFile("views/sidebar.jade"),
-        content: jade.renderFile("views/first_page.jade")
+        content: jade.renderFile("views/first_page.jade"),
+        script_hook: templates()
     };
 
     response.render('top_layout', options);
