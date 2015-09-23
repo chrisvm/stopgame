@@ -13,7 +13,7 @@
 
     "room create_room": [
       "room",
-      "create_rooms"
+      "create_room"
     ]
 
   }
