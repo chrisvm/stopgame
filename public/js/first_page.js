@@ -52,13 +52,14 @@ socket.on('user auth_username_response', function (opts) {
         // add username to socket
         socket.username = opts.username;
 
+        // set the loading animation
+        var spinner_opts = {
+            "position": "relative"
+        };
+        var spinner = new Spinner(spinner_opts).spin();
+
         // enter next page
         $("#logo_container").fadeOut("slow", function () {
-            // set the loading animation
-            var spinner_opts = {
-                "position": "relative"
-            };
-            var spinner = new Spinner(spinner_opts).spin();
             var $top_container = $('#top_container');
 
             $top_container.css("margin-top", "100px");

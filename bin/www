@@ -1,5 +1,8 @@
-// Module dependencies.
+// set format
+var format = require('string-format');
+format.extend(String.prototype);
 
+// Module dependencies.
 var app = require('../app');
 var debug = require('debug')('parsing_test:server');
 var http = require('http');

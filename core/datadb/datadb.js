@@ -1,21 +1,13 @@
-var mongoose = require('mongoose');
-
-// db constants
-MONGODB_SERVER = 'mongodb://159.203.85.83/stop';
-
 function DataDB() {
     // set mongoose reference
-    this.mongoose = mongoose;
+    this.mongoose = require('./db_conn');
 
     // set empty models
     this.models = {};
 
-    // connect to the server
-    mongoose.connect(MONGODB_SERVER);
-
     // set event handlers and connect
-    var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
+    var db = this.mongoose.connection;
+    db.on('error', console.error.bind(console, 'Mongo connection error:'));
     this.set_models();
 }
 
