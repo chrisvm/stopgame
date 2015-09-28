@@ -1,4 +1,13 @@
 function StatusCode(opts) {
+    var standard = {
+        "code": 200,
+        "short": "ALL_OK"
+    };
+
+    if (opts == null) {
+        return standard;
+    }
+
     switch (opts.type) {
 
         case "not":
@@ -29,10 +38,7 @@ function StatusCode(opts) {
         default:
         case "ok":
         case 200:
-            return {
-                "code": 200,
-                "short": "ALL_OK"
-            };
+            return standard;
             break;
     }
 }
