@@ -10,7 +10,8 @@ var UserSchema = {
 var RoomStateSchema = {
     "name": "RoomState",
     "schema": new mongoose.Schema({
-        "current_letter": String
+        "current_letter": String,
+        "running": Boolean
     })
 };
 
@@ -18,6 +19,7 @@ var RoomSchema = {
     "name": "Room",
     "schema": new mongoose.Schema({
         "name": String,
+        "created_by": [UserSchema.schema],
         "users": [UserSchema.schema],
         "ready": [UserSchema.schema],
         "state": [RoomStateSchema.schema],
