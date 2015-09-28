@@ -19,7 +19,7 @@ var init = {
 init.socketio = function (io) {
     console.log("Initing socket.io handlers");
 
-    // todo: make this into a engine_conf file
+    // todo: make this into an engine_conf file
     io.on('connection', function (socket) {
         console.log('client connected');
 
@@ -34,6 +34,7 @@ init.socketio = function (io) {
         //        method(socket, opts);
         //    });
         //}
+
         // set the socket methods
         socket.on('user auth_username', function(opts){
             init.engine.user.auth_username(socket, opts);
@@ -46,9 +47,7 @@ init.socketio = function (io) {
         socket.on('room create_room', function (opts) {
             init.engine.room.create_room(socket, opts);
         });
-
     });
-
 };
 
 
