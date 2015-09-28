@@ -13,6 +13,7 @@
     "jade": "~1.11.0",
     "json-formatter-js": "^0.2.0",
     "less": "^2.5.1",
+    "mime-db": "^1.19.0",
     "mongoose": "^4.1.7",
     "morgan": "~1.6.1",
     "request": "^2.61.0",
