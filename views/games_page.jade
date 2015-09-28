@@ -1,20 +1,33 @@
-.page-header.center
-    .container
-        .well.content#page-box
-            .panel-body
-                .row
-                    .col-lg-2
-                        img.img-responsive#small_logo(src="/static/images/StopLogo_100x100.png")
-                    .col-lg-8
-                        h1#session Stop Sessions
 
-                   .top-center.well#games-box
-                       .list-group
-                           #games-list
-            .well#add_room_box
-                form
-                    .form-group#input-group
-                        input.form-control.input-md#room-name(placeholder="New Room Name")
-                    button.btn.btn-primary.btn-block#add-room Create Room
 
-script(src="/static/js/games_page.js")
+block game-page
+
+    .page-header.center
+        .container
+            .well.content#page-box
+                .panel-body
+                    .row
+                        .col-lg-2
+                            img.img-responsive#small_logo(src="/static/images/StopLogo_100x100.png")
+                        .col-lg-8
+                            h1#session Stop Sessions
+
+                       .top-center.well#games-box
+                           .list-group
+                               #games-list
+                .well#add_room_box
+                    form
+                        .form-group#input-group
+                            input.form-control.input-md#room-name(placeholder="New Room Name")
+                        button.btn.btn-primary.btn-block#add-room Create Room
+                        button.btn.btn-success.btn-block#side-bar-button Side Bar
+                        script.
+                            $(document).ready(function(){
+                                $("#side-bar-button").click(function(e){
+                                    e.preventDefault();
+                                    $("#wrapper").toggleClass("toggled");
+                                });
+                            });
+
+
+    script(src="/static/js/games_page.js")

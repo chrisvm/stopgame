@@ -41,3 +41,12 @@ function set_alert(type, message, alert_data) {
         $go_button.attr("disabled", false);
     }, 1500);
 }
+
+$('#side-bar-button').onclick(function(){
+    return toggle_sidebar();
+});
+
+function toggle_sidebar() {
+    event.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+}
