@@ -42,10 +42,6 @@ function set_alert(type, message, alert_data) {
     }, 1500);
 }
 
-$('#side-bar-button').onclick(function(){
-    toggle_sidebar();
-});
-
 function toggle_sidebar() {
     event.preventDefault();
     $("#wrapper").toggleClass("toggled");

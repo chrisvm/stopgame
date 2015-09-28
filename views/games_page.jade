@@ -20,14 +20,5 @@ block game-page
                         .form-group#input-group
                             input.form-control.input-md#room-name(placeholder="New Room Name")
                         button.btn.btn-primary.btn-block#add-room Create Room
-                        button.btn.btn-success.btn-block#side-bar-button Side Bar
-                        script.
-                            $(document).ready(function(){
-                                $("#side-bar-button").click(function(e){
-                                    e.preventDefault();
-                                    $("#wrapper").toggleClass("toggled");
-                                });
-                            });
 
-
-    script(src="/static/js/games_page.js")
+script(src="/static/js/games_page.js")
