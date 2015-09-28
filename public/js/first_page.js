@@ -35,27 +35,29 @@ function login_accept (opts) {
 }
 
 // set the callback
-socket.on('user auth_username_response', function (opts) {
-    // if already set username, return
-    if (socket.username != null) return;
+$(document).ready(function () {
+    socket.on('user auth_username_response', function (opts) {
+        // if already set username, return
+        if (socket.username != null) return;
 
-    var alertData = {
-        "btn"  : $("#go_btn").attr('id'),
-        "inp": $("#username").attr('id')
-    };
+        var alertData = {
+            "btn"  : $("#go_btn").attr('id'),
+            "inp": $("#username").attr('id')
+        };
 
-    if (opts.status.code == 200) {
-        // enter the games page
-        login_accept(opts);
+        if (opts.status.code == 200) {
+            // enter the games page
+            login_accept(opts);
 
-    } else if (opts.status.code == 300) {
-        // alert user already in server
-        set_alert("error", "Username taken", alertData);
-        setTimeout(function () {
-            $("#username").attr("disabled", false);
-            $("#go_btn").attr("disabled", false);
-        }, 1500);
-    }
+        } else if (opts.status.code == 300) {
+            // alert user already in server
+            set_alert("error", "Username taken", alertData);
+            setTimeout(function () {
+                $("#username").attr("disabled", false);
+                $("#go_btn").attr("disabled", false);
+            }, 1500);
+        }
+    });
 });
 
 function login () {
