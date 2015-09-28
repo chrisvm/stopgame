@@ -43,7 +43,7 @@ function set_alert(type, message, alert_data) {
 }
 
 $('#side-bar-button').onclick(function(){
-    return toggle_sidebar();
+    toggle_sidebar();
 });
 
 function toggle_sidebar() {
