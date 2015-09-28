@@ -1,4 +1,5 @@
 var DataDB = require('../datadb/datadb');
+var utils = require('./engine_utils');
 
 var user = {
     "engine": null,
@@ -15,17 +16,13 @@ user.auth_username = function (socket, opts) {
         // create respone status
         var status = {};
         if (user == null) {
-            status.code = 200;
-            status.short = 'ALL_OK';
-            status.error = '';
+            status = utils.StatusCode();
 
             // save the new user
             var new_user = new datadb.models.User({ "username": opts.username });
             new_user.save();
         } else {
-            status.code = 300;
-            status.short = 'NOT_OK';
-            status.error = 'User found in db';
+            status = utils.StatusCode({ type: 300 });
         }
 
         // send response
