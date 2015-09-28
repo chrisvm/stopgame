@@ -7,3 +7,4 @@ pages:
   - Home: index.md
   - Protocol: protocol.md
   - Roadmap: roadmap.md
+  - Schemas: schema.md
