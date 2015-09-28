@@ -1,7 +1,7 @@
-Schemas
-=======
+Schemas [(mongoose.Schema)](http://mongoosejs.com/docs/guide.html)
+==================================================================
 
-### User
+### User 
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
