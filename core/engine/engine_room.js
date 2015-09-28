@@ -1,5 +1,5 @@
-var DataDB = require('../datadb/datadb');
-var utils = require('./utils');
+var datadb = require('../datadb/datadb');
+var utils = require('./engine_utils');
 
 var room = {
     "engine": null,
@@ -7,7 +7,6 @@ var room = {
 };
 
 room.all_rooms = function (socket, opts) {
-    var datadb = user.datadb;
 
     // get all rooms
     datadb.models.Room.find(function (err, rooms) {
