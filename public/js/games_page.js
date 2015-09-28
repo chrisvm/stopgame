@@ -15,6 +15,7 @@ function room_name_validate(name) {
     if (name == '') {
         return false;
     }
+    return true;
 }
 
 // set the create method
