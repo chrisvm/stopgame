@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 //};
 
 MONGO_CREDENTIALS = {
-    url: "24.48.236.180:27017"
+    url: "24.48.236.180:27017/stop"
 };
 
 function user_credentials_given (cred) {
