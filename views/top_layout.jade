@@ -9,6 +9,7 @@ html(lang='en')
 
         title= head_title
 
+        script(src="/static/js/min/jquery.min.js")
         script(src="/socket.io/socket.io.js")
         link(href="/static/css/bootstrap.css", rel="stylesheet")
         link(href="/static/css/simple-sidebar.css" rel="stylesheet")
@@ -25,7 +26,6 @@ html(lang='en')
                 #sidebar-wrapper!= sidebar_content
                 #page-content-wrapper!= content
 
-        script(src="/static/js/min/jquery.min.js")
         script(src="/static/js/min/html5shiv.min.js")
         script(src="/static/js/min/respond.min.js")
         script(src="/static/js/min/bootstrap.min.js")
