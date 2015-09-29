@@ -1,0 +1,31 @@
+.top-center {
+  margin-left: auto;
+  width: auto; }
+
+.center {
+  margin-right: auto;
+  margin-left: auto; }
+
+#players-count {
+  color: #000011; }
+
+#page-box {
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+  background-color: rgba(255, 255, 255, 0.75); }
+
+#add_room_box {
+  margin-right: auto;
+  margin-left: auto;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.75); }
+
+body {
+  background-color: rgba(111, 111, 111, 0.75); }
+
+#games-box {
+  margin-right: auto;
+  margin-left: auto; }
+
+/*# sourceMappingURL=games-page.css.map */
