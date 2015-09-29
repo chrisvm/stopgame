@@ -26,6 +26,7 @@ app.use(cookieParser());
 // set the route handlers
 app.use('/', stop);
 app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, 'bower_components')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

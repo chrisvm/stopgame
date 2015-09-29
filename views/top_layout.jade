@@ -9,12 +9,13 @@ html(lang='en')
 
         title= head_title
 
-        script(src="/static/js/min/jquery.min.js")
+        script(src="/static/bower_components/jquery/dist/jquery.min.js")
         script(src="/socket.io/socket.io.js")
-        link(href="/static/css/bootstrap.css", rel="stylesheet")
+
+        link(href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
         link(href="/static/css/simple-sidebar.css" rel="stylesheet")
-        link(href="/static/css/first_page.css" rel="stylesheet")
-        link(href="/static/css/games_page.css" rel="stylesheet")
+        link(href="/static/css/first-page.css" rel="stylesheet")
+        link(href="/static/css/games-page.css" rel="stylesheet")
 
     body
         if toggled
@@ -26,10 +27,10 @@ html(lang='en')
                 #sidebar-wrapper!= sidebar_content
                 #page-content-wrapper!= content
 
-        script(src="/static/js/min/html5shiv.min.js")
-        script(src="/static/js/min/respond.min.js")
-        script(src="/static/js/min/bootstrap.min.js")
+        script(src="/static/bower_components/html5shiv/dist/html5shiv.min.js")
+        script(src="/static/bower_components/respond/dest/respond.min.js")
+        script(src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js")
+        script(src="/static/bower_components/spin.js/spin.min.js")
         script(src="/static/js/init.js")
-        script(src="/static/js/min/spin.min.js")
         script(src="/static/js/client_utils.js")
         != script_hook
