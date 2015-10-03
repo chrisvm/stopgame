@@ -3,3 +3,5 @@
 node_modules
 bower_components
 docs/html
+public/js/*.js
+public/js/*.js.map
