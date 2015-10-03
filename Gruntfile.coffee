@@ -12,6 +12,8 @@ module.exports = (grunt) ->
 
 		sass:
 			dist:
+				options:
+					noCache: true
 				files:
 					'public/css/first-page.css': 'public/css/first-page.sass'
 					'public/css/games-page.css': 'public/css/games-page.sass'
