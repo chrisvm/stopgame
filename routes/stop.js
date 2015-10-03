@@ -1,6 +1,6 @@
 var express = require('express');
 var jade = require('jade');
-var templates = require('../public/js/templates');
+var templates = require('../core/templates');
 
 var router = express.Router();
 
