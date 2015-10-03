@@ -3,3 +3,8 @@
 node_modules
 bower_components
 docs/html
+
+public/js/*.js*
+core/utils/*.js*
+public/css/*.css*
+.sass-cache
