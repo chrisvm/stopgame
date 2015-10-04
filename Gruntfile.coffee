@@ -9,7 +9,9 @@ module.exports = (grunt) ->
 					'public/js/games_page.js': 'public/js/games_page.coffee'
 					'public/js/init.js': 'public/js/init.coffee'
 					'core/utils/templates.js': 'core/utils/templates.coffee'
-
+					'core/datadb/datadb.js': 'core/datadb/datadb.coffee'
+					'core/datadb/db_conn.js': 'core/datadb/db_conn.coffee'
+					'core/datadb/models_schema.js': 'core/datadb/models_schema.coffee'
 		sass:
 			dist:
 				options:
