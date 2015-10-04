@@ -1,12 +1,12 @@
 # get all the rooms on the server
-socket.on("room all_users_response", (opts) ->
+window.socket.on("room all_users_response", (opts) ->
     if opts.status.code is 200
         $games_list = $("#games-list")
         $games_list.html(SessionList(sessions: opts.rooms))
 )
 
-socket.emit("room all_users",
-    username: socket.username
+window.socket.emit("room all_users",
+    username: window.socket.username
 )
 
 room_name_validate = (name) ->
@@ -28,14 +28,14 @@ $("#add-room").click( () ->
         return false
 
     opts =
-        username: socket.username
+        username: window.socket.username
         room_name: room_name
 
-    socket.emit("room create_room", opts)
+    window.socket.emit("room create_room", opts)
 )
 
-socket.on("room create_room_response", (opts) ->
-    socket.room_ref = opts.room
+window.socket.on("room create_room_response", (opts) ->
+    window.socket.room_ref = opts.room
     # continue to room page
     # todo: add rooms page and connect this to it
 )
