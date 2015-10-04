@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 					'core/datadb/datadb.js': 'core/datadb/datadb.coffee'
 					'core/datadb/db_conn.js': 'core/datadb/db_conn.coffee'
 					'core/datadb/models_schema.js': 'core/datadb/models_schema.coffee'
-					'core/engine/engine.js': 'core/engine/engine.coffee'
+					#'core/engine/engine.js': 'core/engine/engine.coffee'
 				options:
 					bare: true
 		sass:
