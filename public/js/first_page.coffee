@@ -1,6 +1,6 @@
 login_accept = (opts) ->
     # add username to socket
-    socket.username = opts.username
+    window.socket.username = opts.username
 
     # set the loading animation
     spinner_opts =
@@ -21,7 +21,7 @@ login_accept = (opts) ->
             url: "/"
             type: "post"
             data:
-                username: socket.username
+                username: window.socket.username
             success: (data, textStatus, jqXHR) ->
                 $("#page-content-wrapper").html(data)
             error: (jqXHR, textStatus, errorThrown) ->
@@ -32,9 +32,9 @@ login_accept = (opts) ->
 
 # set the callback
 $(document).ready(() ->
-    socket.on('user auth_username_response', (opts) ->
+    window.socket.on('user auth_username_response', (opts) ->
         # if already set username, return
-        if socket.username isnt null
+        if window.socket.username isnt null
             return
 
         alertData =
@@ -89,7 +89,7 @@ login = () ->
         username: username
 
     # send the user.auth_username message
-    socket.emit('user auth_username', opts)
+    window.socket.emit('user auth_username', opts)
     return false
 
 $("#go_btn").click(login)
