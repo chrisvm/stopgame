@@ -1,0 +1,7 @@
+{
+  "apps" : [{
+
+    "name"        : "stopgame",
+    "script"      : "bin/www"
+  }]
+}
