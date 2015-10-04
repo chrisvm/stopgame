@@ -6,5 +6,6 @@ docs/html
 
 public/js/*.js*
 core/utils/*.js*
+core/datadb/*.js*
 public/css/*.css*
 .sass-cache
