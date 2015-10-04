@@ -3,23 +3,23 @@ Stop Game
 
 ![GitHub Logo](/public/images/StopLogo_300x300.png)
 
-## Install 
+## Install
 
-To install, just run 
+To install, just run
 
 	npm install
 
 in the root directory
 
-## Usage 
+## Usage
 
 To serve the webapp, just run `/bin/www` with node
 
-	node bin/www 
+	node bin/www
 
-This will start the webapp in localhost:3000 if no PORT variable is set. 
+This will start the webapp in localhost:3000 if no PORT variable is set.
 
-## Uses 
+## Uses
 
 - [node.js](https://nodejs.org/en/)
 - [expressjs](http://expressjs.com/)
@@ -29,10 +29,11 @@ This will start the webapp in localhost:3000 if no PORT variable is set.
 - [bootstrap](http://getbootstrap.com/)
 - [jade](http://jade-lang.com/)
 - [mongoose](http://mongoosejs.com/)
-
+- [grunt](http://gruntjs.com/)
+- [CoffeScript](http://coffeescript.org/)
 ____
 
 ### v0.2
 
 - Starting Room creation and display
-- user creation (roughtly) works 
+- user creation (roughtly) works
