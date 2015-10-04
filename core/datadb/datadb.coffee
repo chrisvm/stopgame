@@ -16,6 +16,7 @@ DataDB.prototype.set_models = () ->
 
     # for each one, create a model and add it to this.models
     for schema_def in schemas_array
+
         # create model
         schema = schema_def.schema
         model = this.mongoose.model(schema_def.name, schema)
