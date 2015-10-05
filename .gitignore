@@ -4,8 +4,8 @@ node_modules
 bower_components
 docs/html
 
-public/js/*.js*
-!public/js/*json
+public/**/*.js*
+!public/**/*json
 
 core/**/*.js*
 !core/**/*.json
