@@ -5,10 +5,13 @@ DataDB = () ->
     # set empty models
     this.models = {}
 
-    # set event handlers and connect
+    # set error event handlers and connect
     db = this.mongoose.connection
     db.on('error', console.error.bind(console, 'Mongo connection error:'))
+
+    # init the models
     this.set_models()
+    return
 
 DataDB.prototype.set_models = () ->
     # get the schemas
@@ -23,5 +26,6 @@ DataDB.prototype.set_models = () ->
 
         # add to this.models
         this.models[schema_def.name] = model
-
+    return
+    
 module.exports = DataDB
