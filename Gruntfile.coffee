@@ -8,6 +8,7 @@ module.exports = (grunt) ->
 					'public/js/first_page.js': 'public/js/first_page.coffee'
 					'public/js/games_page.js': 'public/js/games_page.coffee'
 					'public/js/init.js': 'public/js/init.coffee'
+					'public/js/freebase/freebase.js': 'public/js/freebase/freebase.coffee'
 
 					'core/utils/templates.js': 'core/utils/templates.coffee'
 

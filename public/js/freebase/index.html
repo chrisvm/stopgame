@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/static/jquery/dist/jquery.min.js"></script>
+    <script src="/static/js/freebase/freebase.js"></script>
+  </head>
+  <body><aside class="warning"><strong>Warning: </strong>The Freebase API will be retired on June 30, 2015. <a href="https://plus.sandbox.google.com/109936836907132434202/posts/bu3z2wVqcQc">Read more</a>.</aside>
+    <script>
+      var query = [{'id': null, 'name': null, 'type': '/astronomy/planet'}];
+      var fbase = new Freebase();
+      fbase.mql(query, function (response) {
+          console.log(response);
+          $.each(response.result, function(i,planet){
+              $('<div>',{text:planet.name}).appendTo(document.body);
+          });
+      });
+    </script>
+  </body>
+</html>
