@@ -1,6 +1,6 @@
 login_accept = (opts) ->
     # add username to socket
-    window.socket.username = opts.username
+    socket.username = opts.username
 
     # set the loading animation
     spinner_opts =
@@ -21,7 +21,7 @@ login_accept = (opts) ->
             url: "/"
             type: "post"
             data:
-                username: window.socket.username
+                username: socket.username
             success: (data, textStatus, jqXHR) ->
                 $("#page-content-wrapper").html(data)
             error: (jqXHR, textStatus, errorThrown) ->
@@ -32,9 +32,9 @@ login_accept = (opts) ->
 
 # set the callback
 $(document).ready(() ->
-    window.socket.on('user auth_username_response', (opts) ->
+    socket.on('user auth_username_response', (opts) ->
         # if already set username, return
-        if window.socket.username isnt null
+        if socket.username isnt null
             return
 
         alertData =
@@ -48,7 +48,7 @@ $(document).ready(() ->
 
         else if opts.status.code is 300
             # alert user already in server
-            window.set_alert("error", "Username taken", alertData)
+            set_alert("error", "Username taken", alertData)
             setTimeout( () ->
                 $("#username").attr("disabled", false)
                 $("#go_btn").attr("disabled", false)
@@ -74,7 +74,7 @@ login = () ->
 
     if username is ''
         # set warning to form-group
-        window.set_alert('alert', "Empty Username", alertData)
+        set_alert('alert', "Empty Username", alertData)
 
         # disable disable
         setTimeout( () ->
@@ -89,7 +89,7 @@ login = () ->
         username: username
 
     # send the user.auth_username message
-    window.socket.emit('user auth_username', opts)
+    socket.emit('user auth_username', opts)
     return false
 
 $("#go_btn").click(login)

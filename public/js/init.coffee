@@ -1,3 +1,3 @@
 # init the socket io connection
-window.socket = io()
-window.socket.username = null
+socket = io()
+socket.username = null

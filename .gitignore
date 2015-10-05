@@ -5,7 +5,10 @@ bower_components
 docs/html
 
 public/js/*.js*
-core/utils/*.js*
-core/datadb/*.js*
+!public/js/*json
+
+core/**/*.js*
+!core/**/*.json
+
 public/css/*.css*
 .sass-cache

@@ -1,4 +1,4 @@
-window.set_alert = (type, message, alert_data) ->
+set_alert = (type, message, alert_data) ->
     $go_button = $('#'+alert_data.btn)
     $input = $('#'+alert_data.inp)
 
@@ -40,6 +40,6 @@ window.set_alert = (type, message, alert_data) ->
     , 1500)
 
 
-window.toggle_sidebar = () ->
+toggle_sidebar = () ->
     event.preventDefault()
     $("#wrapper").toggleClass("toggled")
