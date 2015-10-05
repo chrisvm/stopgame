@@ -26,8 +26,8 @@ module.exports = (grunt) ->
 
 		clean:
 			engine_js: [
-				'core/engine/*.js*'
-				'!core/engine/*.json'
+				'core/**/*.js*'
+				'!core/**/*.json'
 
 				'public/js/*.js*'
 				'!public/js/*.json'
