@@ -35,9 +35,7 @@ router.post('/', function (request, response) {
 });
 
 router.get('/freebase', function (request, response) {
-    var data = fs.readFileSync('public/js/freebase/index.html');
-    response.type('html');
-    response.send(data);
+    response.render("freebase_test");
 });
 
 module.exports = router;
