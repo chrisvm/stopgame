@@ -35,7 +35,7 @@ The application can be served from pm2, there's a app/json file describing the p
 
 on the root dir of the project.
 
-## Uses
+## Made With
 
 - [node.js](https://nodejs.org/en/)
 - [expressjs](http://expressjs.com/)
