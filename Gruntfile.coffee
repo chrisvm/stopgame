@@ -28,6 +28,11 @@ module.exports = (grunt) ->
 			engine_js: [
 				'core/engine/*.js*'
 				'!core/engine/*.json'
+
+				'public/js/*.js*'
+				'!public/js/*.json'
+
+				'public/css/*.css*'
 			]
 
 		sass:
@@ -59,3 +64,4 @@ module.exports = (grunt) ->
 	# register tasks
 	grunt.registerTask('default', ['watch'])
 	grunt.registerTask('init', ['coffee', 'sass'])
+	grunt.registerTask('reinit', ['clean', 'coffee', 'sass'])
