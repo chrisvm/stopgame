@@ -1,0 +1,59 @@
+doctype html
+html
+    head
+        script(src="/static/jquery/dist/jquery.min.js")
+        script(src="/static/js/freebase/freebase.js")
+        link(href="/static/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+    
+        style.
+            .center {
+                width: 1000px;
+                padding-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+  body
+    .container.center
+        .row
+            .col-lg-12
+                .input-group
+                    input.form-control#search_input(type="text", placeholder="Enter search here")
+                    span.input-group-btn
+                        button.btn.btn-default#search_button(type="button") Search Persons
+        .row#results
+        
+    script.
+        function add_to_results(result) {
+            var $pre = $('<pre class="result">');
+            var $col = $('<div class="col-lg-12">');
+            
+            $pre.text(JSON.stringify(result));
+            $pre.appendTo($col);
+            $col.appendTo($('#results'));
+        }
+        
+        function get_search() {
+            var ret = $('#search_input').val();
+            return ret;
+        }
+        
+        function clear_results() {
+            $('.result').remove();
+        }
+        
+        $('#search_button').click(function () {
+            var query = [{'id': null, 'name': get_search(), 'type': '/people/person'}];
+            var fbase = new Freebase();
+            fbase.mql(query, function (response) {
+                console.log(response);
+                clear_results();
+                $.each(response.result, function (i, person) {
+                    add_to_results(person);
+                });
+            });
+        });
+      
+    script(src="/static/html5shiv/dist/html5shiv.min.js")
+    script(src="/static/respond/dest/respond.min.js")
+    script(src="/static/bootstrap/dist/js/bootstrap.min.js")
