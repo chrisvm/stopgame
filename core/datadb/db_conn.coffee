@@ -1,7 +1,7 @@
 mongoose = require('mongoose')
 
 creds =
-    url: "24.48.236.180:27017/stop"
+    url: "24.48.216.4:27017/stop"
 
 
 given_cred = (cred) ->
