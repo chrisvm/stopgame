@@ -1,5 +1,6 @@
 var express = require('express');
 var jade = require('jade');
+var fs = require('fs');
 var templates = require('../core/utils/templates');
 
 var router = express.Router();
@@ -31,6 +32,10 @@ router.post('/', function (request, response) {
 
     // render game_page
     response.render("games_page");
+});
+
+router.get('/freebase', function (request, response) {
+    response.render("freebase_test");
 });
 
 module.exports = router;

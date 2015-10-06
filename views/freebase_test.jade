@@ -1,0 +1,96 @@
+doctype html
+html
+    head
+        script(src="/static/jquery/dist/jquery.min.js")
+        script(src="/static/js/freebase/freebase.js")
+        script(src="/static/js/freebase/topic.js")
+        
+        link(href="/static/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+    
+        style.
+            .center {
+                width: 1000px;
+                padding-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .valid {
+                background: #00FF00;
+            }
+            
+            .invalid {
+                background: #FF0000;
+            }
+            
+  body
+    .container.center
+        .row
+            .col-lg-12
+                .input-group
+                    input.form-control#search_input(type="text", placeholder="Enter search here")
+                    span.input-group-btn
+                        button.btn.btn-default#search_button(type="button") Search Persons
+        .row#results
+        
+    script.
+        var topic_init = {
+            "name": "Person",
+            "short": "person",
+            "rules": {
+                "is": [
+                    { "type": "/people/person" }
+                ]
+            }
+        };
+        var topic = new Topic(topic_init);
+        
+        function add_to_results(result, valid) {
+            var $pre = $('<pre class="result">');
+            if (!valid) {
+                $pre.addClass("invalid");
+            } else {
+                $pre.addClass("valid")
+            }
+            var $col = $('<div class="col-lg-12">');
+            
+            $pre.text(JSON.stringify(result));
+            $pre.appendTo($col);
+            $col.appendTo($('#results'));
+        }
+        
+        function get_search() {
+            var ret = $('#search_input').val();
+            return ret;
+        }
+        
+        function clear_results() {
+            $('.result').remove();
+        }
+        
+        function check_person() {
+            // get topic search 
+            topic.validate(get_search(), function (valid) {
+                clear_results();
+                var message;
+                if (valid) {
+                    message = "Person found";
+                } else {
+                    message = "Person not found";
+                }
+                add_to_results(message, valid);
+            });
+        }
+        
+        function get_persons() {
+            topic.query(get_search(), function (response) {
+                $.each(response.result, function (i, result) {
+                    add_to_results(result, topic.check(result));
+                });
+            });
+        }
+        $('#search_button').click(check_person);
+      
+    script(src="/static/html5shiv/dist/html5shiv.min.js")
+    script(src="/static/respond/dest/respond.min.js")
+    script(src="/static/bootstrap/dist/js/bootstrap.min.js")
