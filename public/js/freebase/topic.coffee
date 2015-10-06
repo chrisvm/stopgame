@@ -49,7 +49,10 @@ class Topic
             return
         return
 
-    # check all topics rule for a result
+    ### check all topics rule for a result
+    # @param result object the object to check for topic rules
+    # @return bool if the object passes all rule checks
+    ### 
     check: (result) ->
         # check all 'is' rules
         if 'is' of this.rules
@@ -60,7 +63,10 @@ class Topic
                         return false
         return true
 
-    # search a topic with text
+    ### search a topic with text
+    # @param search String the text search
+    # @param callback function(result) a callback with the results of the query
+    ###
     query: (search, callback) ->
         query = {}
         for is_rule in this.rules.is
